@@ -7,6 +7,7 @@ import {
 import { 
     opcoesSituacaoBeneficiario, moeda, porcentagem
 } from '../../utils';
+import { InputDinheiro } from '../inputs/inputs.components';
 
 
 export const MainContribuicao = ({ handlers, data }) => {
@@ -17,11 +18,9 @@ export const MainContribuicao = ({ handlers, data }) => {
                     <SpanMiddle>{data.informacoes.textoValor}</SpanMiddle>
                 </Col>
                 <Col>
-                    <FormControl 
-                        onChange={(event) => handlers.prepararValorBase(event.target.value)}
+                    <InputDinheiro
+                        onChangeEvent={event => handlers.prepararValorBase(event.target.value)}
                         value={data.valorBase}
-                        type={'number'} 
-                        min={0}
                     />
                 </Col>
             </LineRow>

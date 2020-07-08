@@ -22,7 +22,7 @@ const HomeController = () => {
     const SALARIO_MINIMO = 1045;
 
     const prepararValorBase = (valor) => {
-        let novoValor = parseFloat(valor);
+        let novoValor = parseFloat(valor.replace('.', '').replace(',', '.'));
 
         setValorBase(novoValor);
     };
