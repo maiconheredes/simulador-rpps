@@ -19,7 +19,7 @@ export const opcoesSituacaoBeneficiario = () => {
 };
 
 export const moeda = (valor) => {
-	if (valor <= 0) return '-';
+	if (valor <= 0 || isNaN(valor)) return '-';
 	
 	return `R$ ${(valor).toLocaleString('pt-BR', {
 		minimumFractionDigits: 2,
@@ -28,6 +28,8 @@ export const moeda = (valor) => {
 };
 
 export const porcentagem = (valor) => {
+    if (valor <= 0 || isNaN(valor)) return '-';
+    
 	return `${(valor * 100).toLocaleString('pt-BR', {
 		minimumFractionDigits: 2,
 		maximumFractionDigits: 2,

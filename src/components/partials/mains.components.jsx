@@ -18,7 +18,7 @@ export const MainContribuicao = ({ handlers, data }) => {
                 </Col>
                 <Col>
                     <FormControl 
-                        onChange={(event) => handlers.setValorBase(parseFloat(event.target.value))}
+                        onChange={(event) => handlers.prepararValorBase(event.target.value)}
                         value={data.valorBase}
                         type={'number'} 
                         min={0}

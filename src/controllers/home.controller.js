@@ -21,6 +21,12 @@ const HomeController = () => {
     const TETO_INSS = 6101.07;
     const SALARIO_MINIMO = 1045;
 
+    const prepararValorBase = (valor) => {
+        let novoValor = parseFloat(valor);
+
+        setValorBase(novoValor);
+    };
+
     const simuPorContri = () => {
         setTipoDeSimulacao(TipoSimuladorState.porContribuicao);
         setSituacaoBeneficiario('');
@@ -189,13 +195,15 @@ const HomeController = () => {
     }, [situacaoBeneficiario, calcularAliquotaEfetiva_L2_L3]);
 
     useEffect(() => {
-        console.log('informacoes', informacoes);
-        console.log('valorBase', valorBase);
-        console.log('tipoDeSimulacao', tipoDeSimulacao);
-        console.log('situacaoBeneficiario', situacaoBeneficiario);
-        console.log('faixaDeContribuicao', faixaDeContribuicao);
-        console.log('remuneracaoTributavel', remuneracaoTributavel);
-        console.log('aliquotaAbaixoDe14', aliquotaAbaixoDe14);
+        if (process.env.NODE_ENV !== 'production') {
+            console.log('informacoes', informacoes);
+            console.log('valorBase', valorBase);
+            console.log('tipoDeSimulacao', tipoDeSimulacao);
+            console.log('situacaoBeneficiario', situacaoBeneficiario);
+            console.log('faixaDeContribuicao', faixaDeContribuicao);
+            console.log('remuneracaoTributavel', remuneracaoTributavel);
+            console.log('aliquotaAbaixoDe14', aliquotaAbaixoDe14);
+        }
     });
 
     useEffect(() => {
@@ -222,8 +230,8 @@ const HomeController = () => {
 
     const handlers = {
         setSituacaoBeneficiario,
+        prepararValorBase,
         simuPorContri,
-        setValorBase,
         simuPorRemu
     };
 
