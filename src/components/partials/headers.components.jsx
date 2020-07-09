@@ -7,7 +7,7 @@ import {
 
 
 export const MainHeader = ({ handlers, data }) => {
-    return <HeaderBlue>
+    return <HeaderBlue className={'pb-15'}>
         <Container>
             <Row>
                 <Col lg={4}>

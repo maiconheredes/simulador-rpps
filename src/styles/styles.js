@@ -9,7 +9,6 @@ export const HeaderButton = styled(Button)`
 `;
 
 export const SpanMiddle = styled.span`
-    display: inline-block;
     padding: 15px 0;
 
     @media (min-width: 992px) {
