@@ -2,12 +2,12 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
 import {
-    HeaderButton, SpanMiddle
+    HeaderButton, SpanMiddle, HeaderBlue
 } from '../../styles/styles';
 
 
 export const MainHeader = ({ handlers, data }) => {
-    return <header>
+    return <HeaderBlue>
         <Container>
             <Row>
                 <Col lg={4}>
@@ -23,5 +23,5 @@ export const MainHeader = ({ handlers, data }) => {
                 </Col>
             </Row>
         </Container>
-    </header>
+    </HeaderBlue>
 };

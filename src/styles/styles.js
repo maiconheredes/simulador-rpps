@@ -25,3 +25,7 @@ export const LineRow = styled(Row)`
     padding: 15px 0;
     margin: 15px 0;
 `;
+
+export const HeaderBlue = styled.header`
+    background-color: lightskyblue;
+`;
